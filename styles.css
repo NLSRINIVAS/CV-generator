@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.resume {
+    display: none;
+    margin-top: 40px;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.resume h2 {
+    margin-top: 0;
+}
+
+.resume p {
+    margin: 5px 0;
+}
