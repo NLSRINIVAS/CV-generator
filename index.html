@@ -5,9 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CV Generator</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome for Download Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <div class="container">
+    <!-- Download Button (Icon) -->
+    <div class="download-icon" onclick="downloadPDF()">
+      <i class="fas fa-download"></i>
+    </div>
+
     <h1>CV Generator</h1>
     <form id="cvForm">
       <!-- Photo Upload -->
@@ -39,7 +46,7 @@
       <button type="button" onclick="generateResume()">Generate Resume</button>
     </form>
 
-    <!-- Resume Output Section -->
+  <!-- Resume Preview Section -->
     <div id="resumeOutput" class="resume">
       <h2 id="resumeName"></h2>
       <p id="resumeContact"></p>
@@ -52,8 +59,6 @@
       <p id="resumeEducation"></p>
       <h3>Skills</h3>
       <p id="resumeSkills"></p>
-      <!-- Download Button -->
-      <button onclick="downloadPDF()">Download as PDF</button>
     </div>
   </div>
 
