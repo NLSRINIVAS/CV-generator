@@ -1,80 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Generator</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Generator</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <div class="container">
-        <h1>CV Generator</h1>
-        <form id="cvForm">
-            <label for="name">Full Name:</label>
-            <input type="text" id="name" required>
+  <div class="container">
+    <h1>CV Generator</h1>
+    <form id="cvForm">
+      <!-- Photo Upload -->
+      <label for="photo">Upload Photo (Optional):</label>
+      <input type="file" id="photo" accept="image/*">
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" required>
+      <!-- User Inputs -->
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" required>
 
-            <label for="phone">Phone:</label>
-            <input type="tel" id="phone" required>
-            <label for="summary">Professional Summary:</label>
-            <textarea id="summary" rows="4" required></textarea>
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
 
-            <label for="experience">Work Experience:</label>
-            <textarea id="experience" rows="6" required></textarea>
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" required>
 
-            <label for="education">Education:</label>
-            <textarea id="education" rows="4" required></textarea>
+      <label for="summary">Professional Summary:</label>
+      <textarea id="summary" rows="4" required></textarea>
 
-            <label for="skills">Skills (comma-separated):</label>
-            <input type="text" id="skills" required>
+      <label for="experience">Work Experience:</label>
+      <textarea id="experience" rows="6" required></textarea>
 
-            <button type="button" onclick="generateResume()">Generate Resume</button>
-        </form>
+      <label for="education">Education:</label>
+      <textarea id="education" rows="4" required></textarea>
 
-        <div id="resumeOutput" class="resume">
-            <h2 id="resumeName"></h2>
-            <p id="resumeContact"></p>
-            <h3>Professional Summary</h3>
-            <p id="resumeSummary"></p>
-            <h3>Work Experience</h3>
-            <p id="resumeExperience"></p>
-            <h3>Education</h3>
-            <p id="resumeEducation"></p>
-            <h3>Skills</h3>
-            <p id="resumeSkills"></p>
-            <button onclick="downloadPDF()">Download as PDF</button>
-        </div>
+      <label for="skills">Skills (comma-separated):</label>
+      <input type="text" id="skills" required>
+
+      <button type="button" onclick="generateResume()">Generate Resume</button>
+    </form>
+
+    <!-- Resume Output Section -->
+    <div id="resumeOutput" class="resume">
+      <h2 id="resumeName"></h2>
+      <p id="resumeContact"></p>
+      <img id="resumePhoto" src="" alt="User Photo" style="display: none; max-width: 100px; border-radius: 50%; margin: 10px 0;">
+      <h3>Professional Summary</h3>
+      <p id="resumeSummary"></p>
+      <h3>Work Experience</h3>
+      <p id="resumeExperience"></p>
+      <h3>Education</h3>
+      <p id="resumeEducation"></p>
+      <h3>Skills</h3>
+      <p id="resumeSkills"></p>
+      <!-- Download Button -->
+      <button onclick="downloadPDF()">Download as PDF</button>
     </div>
+  </div>
 
-    <script>
-        function generateResume() {
-            // Get user inputs
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const summary = document.getElementById('summary').value;
-            const experience = document.getElementById('experience').value;
-            const education = document.getElementById('education').value;
-            const skills = document.getElementById('skills').value;
-
-            // Display resume
-            document.getElementById('resumeName').textContent = name;
-            document.getElementById('resumeContact').textContent = '${ email } | ${ phone }';
-            document.getElementById('resumeSummary').textContent = summary;
-            document.getElementById('resumeExperience').textContent = experience;
-            document.getElementById('resumeEducation').textContent = education;
-            document.getElementById('resumeSkills').textContent = skills;
-
-            // Show resume section
-            document.getElementById('resumeOutput').style.display = 'block';
-        }
-    </script>
+  <!-- Add jsPDF Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <!-- Add Custom JavaScript -->
+  <script src="script.js"></script>
 </body>
-
 </html>
