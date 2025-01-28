@@ -220,4 +220,4 @@ function addSectionHeader(doc, text, x, y) {
     doc.setLineWidth(0.8);
     doc.line(x, y + 2, x + 50, y + 2);
     doc.setFont('helvetica', 'normal');
-          }
+    }
